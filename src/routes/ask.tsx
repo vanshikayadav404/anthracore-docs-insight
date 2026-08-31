@@ -179,7 +179,7 @@ function AskPage() {
                           className="mx-0.5 inline-flex items-center gap-1 rounded-full border border-primary/40 bg-accent/40 px-2 py-0.5 align-baseline text-xs font-medium text-primary transition-colors hover:bg-accent"
                         >
                           <FileText className="size-3" />
-                          [Source: {m.citations[seg.citation].label}]
+                          [Source: {m.citations[seg.citation]!.label}]
                         </button>
                       ),
                     )}
