@@ -136,7 +136,7 @@ function AskPage() {
       title="Ask AnthraCore"
       subtitle="Natural-language retrieval over the indexed corpus, with page-level citations."
       breadcrumb="Ask AnthraCore"
- Gomez    >
+ >
       <div className="grid gap-4 lg:grid-cols-4">
         <div className="flex flex-col rounded-md border border-border bg-card shadow-[var(--shadow-card)] lg:col-span-3">
           {/* Transcript */}
