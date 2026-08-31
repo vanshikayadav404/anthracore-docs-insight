@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AskRouteImport } from './routes/ask'
+import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as ParliamentaryReportsRouteImport } from './routes/parliamentary-reports'
 import { Route as UploadRouteImport } from './routes/upload'
 
@@ -22,6 +23,11 @@ const IndexRoute = IndexRouteImport.update({
 const AskRoute = AskRouteImport.update({
   id: '/ask',
   path: '/ask',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsRoute = InsightsRouteImport.update({
+  id: '/insights',
+  path: '/insights',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ParliamentaryReportsRoute = ParliamentaryReportsRouteImport.update({
@@ -38,12 +44,14 @@ const UploadRoute = UploadRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/ask': typeof AskRoute
+  '/insights': typeof InsightsRoute
   '/parliamentary-reports': typeof ParliamentaryReportsRoute
   '/upload': typeof UploadRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/ask': typeof AskRoute
+  '/insights': typeof InsightsRoute
   '/parliamentary-reports': typeof ParliamentaryReportsRoute
   '/upload': typeof UploadRoute
 }
@@ -51,20 +59,28 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/ask': typeof AskRoute
+  '/insights': typeof InsightsRoute
   '/parliamentary-reports': typeof ParliamentaryReportsRoute
   '/upload': typeof UploadRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/ask' | '/parliamentary-reports' | '/upload'
+  fullPaths: '/' | '/ask' | '/insights' | '/parliamentary-reports' | '/upload'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/ask' | '/parliamentary-reports' | '/upload'
-  id: '__root__' | '/' | '/ask' | '/parliamentary-reports' | '/upload'
+  to: '/' | '/ask' | '/insights' | '/parliamentary-reports' | '/upload'
+  id:
+    | '__root__'
+    | '/'
+    | '/ask'
+    | '/insights'
+    | '/parliamentary-reports'
+    | '/upload'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AskRoute: typeof AskRoute
+  InsightsRoute: typeof InsightsRoute
   ParliamentaryReportsRoute: typeof ParliamentaryReportsRoute
   UploadRoute: typeof UploadRoute
 }
@@ -83,6 +99,13 @@ declare module '@tanstack/react-router' {
       path: '/ask'
       fullPath: '/ask'
       preLoaderRoute: typeof AskRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights': {
+      id: '/insights'
+      path: '/insights'
+      fullPath: '/insights'
+      preLoaderRoute: typeof InsightsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/parliamentary-reports': {
@@ -105,6 +128,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AskRoute: AskRoute,
+  InsightsRoute: InsightsRoute,
   ParliamentaryReportsRoute: ParliamentaryReportsRoute,
   UploadRoute: UploadRoute,
 }
