@@ -123,7 +123,7 @@ function UploadPage() {
       title="Upload & Process"
       subtitle="Queue scanned reports for OCR, table extraction and cross-validation."
       breadcrumb="Upload & Process"
-赶    >
+>
       <div className="grid gap-4 lg:grid-cols-5">
         {/* Upload / pipeline column */}
         <div className="space-y-4 lg:col-span-3">
