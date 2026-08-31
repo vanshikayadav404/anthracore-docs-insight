@@ -90,7 +90,6 @@ const DRAFTS: Record<string, Draft> = {
       { metric: "Jharkhand (BT)", fy2223: "83.2", fy2324: "83.5", fy2425: "83.9" },
       { metric: "Odisha (BT)", fy2223: "79.3", fy2324: "79.6", fy2425: "79.9" },
       { metric: "Chhattisgarh (BT)", fy2223: "57.2", fy2324: "57.4", fy2425: "57.6" },
-",
     ],
     citations: [
       {
