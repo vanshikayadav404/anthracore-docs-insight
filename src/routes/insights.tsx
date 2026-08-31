@@ -66,7 +66,7 @@ function InsightsPage() {
       title="Insights"
       subtitle="Aggregate trends derived from the indexed geological and statutory record set."
       breadcrumb="Insights"
- extraction   >
+ >
       <div className="grid gap-4 lg:grid-cols-2">
         {/* Word cloud */}
         <div className="rounded-md border border-border bg-card shadow-[var(--shadow-card)]">
