@@ -153,7 +153,7 @@ function ParliamentaryReports() {
     setSent(false);
     window.clearTimeout(timer.current);
     timer.current = window.setTimeout(() => {
-      setDraft(DRAFTS[value]);
+      setDraft(DRAFTS[value]!);
       setLoading(false);
     }, 2200);
   }
